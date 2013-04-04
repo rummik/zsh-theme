@@ -1,3 +1,13 @@
+function psmin() {
+	if [[ ! -z "$_PS1" ]]; then
+		export PS1="$_PS1"
+		export _PS1=
+	else
+		export _PS1="$PS1"
+		export PS1='> '
+	fi
+}
+
 function _colorize {
 	[[ $1 == 'rummik' ]] && print green && return
 
