@@ -14,6 +14,6 @@ function _colorize {
 
 PS1="%(!.%{$fg_bold[red]%}.%{$fg_bold[$(_colorize $USER)]%})%n%{$fg_bold[black]%}@%{$fg_bold[$(_colorize $HOST)]%}%m%{$fg_bold[black]%}"
 PS1="$PS1:%{$fg_bold[black]%}%~ {%{$fg_bold[yellow]%}%h%{$fg_bold[black]%}}> %{$reset_color%}"
-PSMIN="%(!.%{$fg_bold[red]%}$.%{$fg_bold[$(_colorize $USER)]%}#)%{$fg_bold[black]%}> %{$reset_color%}"
+PSMIN="%(!.%{$fg_bold[red]%}$.%{$fg_bold[$(_colorize $HOST)]%}#)%{$fg_bold[black]%}> %{$reset_color%}"
 
 # vim: set ft=zsh :
