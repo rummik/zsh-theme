@@ -1,13 +1,3 @@
-function psmin() {
-	if [[ ! -z "$_PS1" ]]; then
-		export PS1="$_PS1"
-		export _PS1=
-	else
-		export _PS1="$PS1"
-		export PS1='> '
-	fi
-}
-
 function _colorize {
 	[[ $1 == 'rummik' ]] && print green && return
 
@@ -24,5 +14,6 @@ function _colorize {
 
 PS1="%(!.%{$fg_bold[red]%}.%{$fg_bold[$(_colorize $USER)]%})%n%{$fg_bold[black]%}@%{$fg_bold[$(_colorize $HOST)]%}%m%{$fg_bold[black]%}"
 PS1="$PS1:%{$fg_bold[black]%}%~ {%{$fg_bold[yellow]%}%h%{$fg_bold[black]%}}> %{$reset_color%}"
+PSMIN="%(!.%{$fg_bold[red]%}$.%{$fg_bold[$(_colorize $USER)]%}#)%{$fg_bold[black]%}> %{$reset_color%}"
 
 # vim: set ft=zsh :
