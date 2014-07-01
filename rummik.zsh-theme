@@ -18,7 +18,7 @@ PSMIN="%(!.%{$fg_bold[red]%}$.%{$fg_bold[$(_colorize $USER)]%}#)%{$fg_bold[$(_co
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" [%{$fg[blue]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg_bold[black]%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[black]%}] %{$fg[red]%}⋯"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[black]%}] %{$fg[green]%}⋯"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[black]%}] %{$fg[red]%}≠"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[black]%}] %{$fg[green]%}="
 
 # vim: set ft=zsh :
