@@ -24,16 +24,16 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_DIRTY=" "
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{${fg[green]}%}="
 
-ZSH_THEME_GIT_PROMPT_ADDED="%{${fg[green]}%}✚"
+ZSH_THEME_GIT_PROMPT_ADDED="%{${fg[green]}%}+"
 ZSH_THEME_GIT_PROMPT_DELETED="%{${fg[red]}%}-"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{${fg_bold[cyan]}%}➜"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{${fg_bold[cyan]}%}→"
 
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{${fg_bold[yellow]}%}·"
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{${fg_bold[magenta]}%}≠"
 
 ZSH_THEME_GIT_PROMPT_STASHED="%{${fg_bold[blue]}%}↔"
 
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{${fg_bold[red]}%}✖"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{${fg_bold[red]}%}×"
 
 ZSH_THEME_GIT_PROMPT_AHEAD="%{${fg_bold[green]}%}↑"
 ZSH_THEME_GIT_PROMPT_AHEAD_REMOTE="%{${fg_bold[green]}%}↓"
