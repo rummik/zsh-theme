@@ -13,7 +13,7 @@ function _colorize {
 }
 
 PS1="%(!.%{${fg_bold[red]}%}.%{${fg_bold[$(_colorize $USER)]}%})%n%{${fg_bold[black]}%}@%{${fg_bold[$(_colorize $HOST)]}%}%m%{${fg_bold[black]}%}"
-PS1+=":%{${fg[gray]}%}%~\$(git_prompt_info)\$(git_prompt_status)%{$fg_bold[black]%}>%{$reset_color%} "
+PS1+=":%{${fg[gray]}%}%~\$(git_prompt_info)\$(git_prompt_status)%{$fg_bold[black]%} {%{$fg_bold[yellow]%}%?%{$fg_bold[black]%}}>%{$reset_color%} "
 
 PSMIN="%(!.%{${fg_bold[red]}%}$.%{${fg_bold[$(_colorize $USER)]}%}#)%{${fg_bold[$(_colorize $HOST)]}%}%%"
 PSMIN+="\$(git_prompt_info)\$(git_prompt_status)%{$fg_bold[black]%}> %{$reset_color%}"
