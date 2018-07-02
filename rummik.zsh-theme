@@ -1,15 +1,17 @@
 function _colorize {
 	[[ $1 == 'rummik' ]] && print green && return
 
-	local i n colors
-	n=0
+	local i char sum colors
+	sum=0
 	colors=(blue magenta cyan yellow white green)
 
-	for i in $(sed 's/./ \0/g;' <<< $1); do
-		n=$(($n + $((#i))))
+	# Sum the ASCII value of each letter
+	for ((i=1; i<=$#1; i++)); do
+		char=${1[$i]}
+		sum=$(($sum + $((#char))))
 	done
 
-	print ${colors[$((($n % 6) + 1))]}
+	print ${colors[$((($sum % $#colors) + 1))]}
 }
 
 PS1="%(!.%{${fg_bold[red]}%}.%{${fg_bold[$(_colorize $USER)]}%})%n%{${fg_bold[black]}%}@%{${fg_bold[$(_colorize $HOST)]}%}%m%{${fg_bold[black]}%}"
