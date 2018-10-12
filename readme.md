@@ -1,5 +1,9 @@
 My ZSH theme
 
+Supports [psmin][], and git status prompt
+
+[psmin]: https://gitlab.com/zick.kim/zsh/zsh-psmin
+
 Screenshot:
 
 ![](screenshot.png)
