@@ -1,6 +1,6 @@
 My ZSH theme
 
-Supports [psmin][], and git status prompt
+Supports [psmin][], git status prompt, and nix-shell
 
 [psmin]: https://gitlab.com/zick.kim/zsh/zsh-psmin
 

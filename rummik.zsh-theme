@@ -44,4 +44,40 @@ ZSH_THEME_GIT_PROMPT_BEHIND="%{${fg_bold[yellow]}%}↓"
 ZSH_THEME_GIT_PROMPT_BEHIND_REMOTE="%{${fg_bold[yellow]}%}↑"
 ZSH_THEME_GIT_PROMPT_DIVERGED="%{${fg_bold[yellow]}%}↕"
 ZSH_THEME_GIT_PROMPT_DIVERGED_REMOTE="%{${fg_bold[yellow]}%}↕"
+
+prompt_nix_shell() {
+	local nsprompt i packages package
+	local black="%{$fg_bold[black]%\}"
+	local yellow="%{$fg[yellow]%\}"
+
+	if [[ -n "$IN_NIX_SHELL" ]]; then
+		if [[ -n $NIX_SHELL_PACKAGES ]]; then
+			packages=(${(s: :)NIX_SHELL_PACKAGES})
+
+			for (( i=1; i<=$#packages; i++ )); do
+				packages[$i]=${packages[$i]##*Packages.}
+				packages[$i]=${packages[$i]%.out}
+			done
+
+			nsprompt="${(j:$black,$yellow :)packages}"
+		elif [[ -n $name ]]; then
+			nsprompt=$name
+			nsprompt=${nsprompt#interactive-}
+			nsprompt=${nsprompt%-environment}
+			nsprompt=${nsprompt%-env}
+		else # This case is only reached if the nix-shell plugin isn't installed or failed in some way
+			nsprompt="nix-shell {}"
+		fi
+		
+		print -n "$black{ $yellow$nsprompt$black } "
+	fi
+
+}
+
+export PATH=$PATH:~/.gem/ruby/2.5.0/bin/
+
+PS1="\$(prompt_nix_shell)$PS1"
+PSMIN="\${IN_NIX_SHELL:+%{$fg[yellow]%\}λ}$PSMIN" 
+
+
 # vim: set ft=zsh :
