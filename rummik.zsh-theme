@@ -74,8 +74,6 @@ prompt_nix_shell() {
 
 }
 
-export PATH=$PATH:~/.gem/ruby/2.5.0/bin/
-
 PS1="\$(prompt_nix_shell)$PS1"
 PSMIN="\${IN_NIX_SHELL:+%{$fg[yellow]%\}λ}$PSMIN" 
 
